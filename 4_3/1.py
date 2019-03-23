@@ -11,12 +11,12 @@ import tensorflow as tf
 # 1. 定义变量及滑动平均类
 # 定义一个 32 位浮点变量，初始值为 0.0 这个代码就是不断更新 w1 参数，优化 w1 参数，滑动平均做了个 w1 的影子
 w1 = tf.Variable(0, dtype=tf.float32)
-# 定义 num_updates（NN 的迭代轮数）,初始值为 0，不可被优化（训练），这个参数不训练
+# 定义 num_updates（NN 的迭代轮数），初始值为 0，不可被优化（训练），这个参数不训练
 global_step = tf.Variable(0, trainable=False)
 # 实例化滑动平均类，给衰减率为 0.99，当前轮数 global_step
 MOVING_AVERAGE_DECAY = 0.99
 ema = tf.train.ExponentialMovingAverage(MOVING_AVERAGE_DECAY, global_step)
-# ema.apply 后的括号里是更新列表，每次运行 sess.run（ema_op） 时，对更新列表中的元素求滑动平均值
+# ema.apply 后的括号里是更新列表，每次运行 sess.run（ema_op）时，对更新列表中的元素求滑动平均值
 # 在实际应用中会使用 tf.trainable_variables() 自动将所有待训练的参数汇总为列表
 # ema_op = ema.apply([w1])
 ema_op = ema.apply(tf.trainable_variables())
