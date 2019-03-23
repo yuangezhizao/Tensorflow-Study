@@ -55,7 +55,7 @@ with tf.Session() as sess:
         sess.run(train_step, feed_dict={x: X[start:end], y_: Y_[start:end]})
         if i % 500 == 0:
             total_loss = sess.run(loss_mse, feed_dict={x: X, y_: Y_})
-            print("After %d training step(s), loss_mse on all data is %g" % (i, total_loss))
+            print('After %d training step(s), loss_mse on all data is %g' % (i, total_loss))
 
     # 输出训练后的参数取值。
     print(sess.run(w1))
