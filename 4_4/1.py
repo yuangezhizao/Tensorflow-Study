@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 
 # attempting to perform BLAS operation using StreamExecutor without BLAS support
 config = tf.ConfigProto()
-config.gpu_options.per_process_gpu_memory_fraction = 0.35
+config.gpu_options.per_process_gpu_memory_fraction = 0.37
 
 BATCH_SIZE = 30
 seed = 2

@@ -21,7 +21,7 @@ REGULARIZER = 0.01
 
 # attempting to perform BLAS operation using StreamExecutor without BLAS support
 config = tf.ConfigProto()
-config.gpu_options.per_process_gpu_memory_fraction = 0.35
+config.gpu_options.per_process_gpu_memory_fraction = 0.37
 
 
 def backward():
