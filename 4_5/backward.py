@@ -72,7 +72,8 @@ def backward():
 if __name__ == '__main__':
     backward()
 
-'''C:\Python37\python.exe D:/yuangezhizao/Documents/PycharmProjects/Tensorflow-Study/4_5/backward.py
+'''
+C:\Python37\python.exe D:/yuangezhizao/Documents/PycharmProjects/Tensorflow-Study/4_5/backward.py
 [[-4.16757847e-01 -5.62668272e-02]
  [-2.13619610e+00  1.64027081e+00]
  [-1.79343559e+00 -8.41747366e-01]

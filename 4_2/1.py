@@ -25,7 +25,8 @@ with tf.Session() as sess:
         loss_val = sess.run(loss)
         print('After %s steps: w is %f,   loss is %f.' % (i, w_val, loss_val))
 
-'''C:\Python37\python.exe D:/yuangezhizao/Documents/PycharmProjects/Tensorflow-Study/4_2/1.py
+'''
+C:\Python37\python.exe D:/yuangezhizao/Documents/PycharmProjects/Tensorflow-Study/4_2/1.py
 WARNING:tensorflow:From C:\Python37\lib\site-packages\tensorflow\python\framework\op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Colocations handled automatically by placer.

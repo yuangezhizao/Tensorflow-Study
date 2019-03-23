@@ -38,7 +38,8 @@ with tf.Session() as sess:
         print('After %s steps: global_step is %f, w is %f, learning rate is %f, loss is %f' % (
             i, global_step_val, w_val, learning_rate_val, loss_val))
 
-'''C:\Python37\python.exe D:/yuangezhizao/Documents/PycharmProjects/Tensorflow-Study/4_2/2.py
+'''
+C:\Python37\python.exe D:/yuangezhizao/Documents/PycharmProjects/Tensorflow-Study/4_2/2.py
 WARNING:tensorflow:From C:\Python37\lib\site-packages\tensorflow\python\framework\op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Colocations handled automatically by placer.

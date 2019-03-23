@@ -46,7 +46,8 @@ with tf.Session() as sess:
             print(sess.run(w1), '\n')
     print('Final w1 is: \n', sess.run(w1))
 
-'''C:\Python37\python.exe D:/yuangezhizao/Documents/PycharmProjects/Tensorflow-Study/4_1/3.py
+'''
+C:\Python37\python.exe D:/yuangezhizao/Documents/PycharmProjects/Tensorflow-Study/4_1/3.py
 WARNING:tensorflow:From C:\Python37\lib\site-packages\tensorflow\python\framework\op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Colocations handled automatically by placer.

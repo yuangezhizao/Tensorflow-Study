@@ -52,7 +52,8 @@ with tf.Session() as sess:
 
 # 更改 MOVING_AVERAGE_DECAY 为 0.1，看影子追随速度
 
-'''C:\Python37\python.exe D:/yuangezhizao/Documents/PycharmProjects/Tensorflow-Study/4_3/1.py
+'''
+C:\Python37\python.exe D:/yuangezhizao/Documents/PycharmProjects/Tensorflow-Study/4_3/1.py
 WARNING:tensorflow:From C:\Python37\lib\site-packages\tensorflow\python\framework\op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Colocations handled automatically by placer.
