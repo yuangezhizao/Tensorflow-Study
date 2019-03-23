@@ -7,14 +7,11 @@
     :Copyright: © 2019 yuangezhizao <root@yuangezhizao.cn>
 """
 import time
+
+import mnist_backward
+import mnist_forward
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
-import mnist_forward
-import mnist_backward
-
-# attempting to perform BLAS operation using StreamExecutor without BLAS support
-config = tf.ConfigProto()
-config.gpu_options.per_process_gpu_memory_fraction = 0.37
 
 TEST_INTERVAL_SECS = 5
 
@@ -33,7 +30,7 @@ def test(mnist):
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
         while True:
-            with tf.Session(config=config) as sess:
+            with tf.Session() as sess:
                 ckpt = tf.train.get_checkpoint_state(mnist_backward.MODEL_SAVE_PATH)
                 if ckpt and ckpt.model_checkpoint_path:
                     saver.restore(sess, ckpt.model_checkpoint_path)

@@ -6,14 +6,10 @@
     :Site: https://www.yuangezhizao.cn
     :Copyright: © 2019 yuangezhizao <root@yuangezhizao.cn>
 """
+import matplotlib.pyplot as plt
+import numpy as np
 # 0导入模块 ，生成模拟数据集
 import tensorflow as tf
-import numpy as np
-import matplotlib.pyplot as plt
-
-# attempting to perform BLAS operation using StreamExecutor without BLAS support
-config = tf.ConfigProto()
-config.gpu_options.per_process_gpu_memory_fraction = 0.37
 
 BATCH_SIZE = 30
 seed = 2
@@ -67,7 +63,7 @@ loss_total = loss_mse + tf.add_n(tf.get_collection('losses'))
 # 定义反向传播方法：不含正则化
 train_step = tf.train.AdamOptimizer(0.0001).minimize(loss_mse)
 
-with tf.Session(config=config) as sess:
+with tf.Session() as sess:
     init_op = tf.global_variables_initializer()
     sess.run(init_op)
     STEPS = 40000
@@ -98,7 +94,7 @@ plt.show()
 # 定义反向传播方法：包含正则化
 train_step = tf.train.AdamOptimizer(0.0001).minimize(loss_total)
 
-with tf.Session(config=config) as sess:
+with tf.Session() as sess:
     init_op = tf.global_variables_initializer()
     sess.run(init_op)
     STEPS = 40000

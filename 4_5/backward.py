@@ -6,22 +6,18 @@
     :Site: https://www.yuangezhizao.cn
     :Copyright: © 2019 yuangezhizao <root@yuangezhizao.cn>
 """
+import forward
+import generateds
+import matplotlib.pyplot as plt
+import numpy as np
 # 0导入模块，生成模拟数据集
 import tensorflow as tf
-import numpy as np
-import matplotlib.pyplot as plt
-import generateds
-import forward
 
 STEPS = 40000
 BATCH_SIZE = 30
 LEARNING_RATE_BASE = 0.001
 LEARNING_RATE_DECAY = 0.999
 REGULARIZER = 0.01
-
-# attempting to perform BLAS operation using StreamExecutor without BLAS support
-config = tf.ConfigProto()
-config.gpu_options.per_process_gpu_memory_fraction = 0.37
 
 
 def backward():
@@ -48,7 +44,7 @@ def backward():
     # 定义反向传播方法：包含正则化
     train_step = tf.train.AdamOptimizer(learning_rate).minimize(loss_total)
 
-    with tf.Session(config=config) as sess:
+    with tf.Session() as sess:
         init_op = tf.global_variables_initializer()
         sess.run(init_op)
         for i in range(STEPS):

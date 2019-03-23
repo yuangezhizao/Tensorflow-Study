@@ -6,14 +6,11 @@
     :Site: https://www.yuangezhizao.cn
     :Copyright: © 2019 yuangezhizao <root@yuangezhizao.cn>
 """
-import tensorflow as tf
-from tensorflow.examples.tutorials.mnist import input_data
-import mnist_forward
 import os
 
-# attempting to perform BLAS operation using StreamExecutor without BLAS support
-config = tf.ConfigProto()
-config.gpu_options.per_process_gpu_memory_fraction = 0.37
+import mnist_forward
+import tensorflow as tf
+from tensorflow.examples.tutorials.mnist import input_data
 
 BATCH_SIZE = 200
 LEARNING_RATE_BASE = 0.1
@@ -51,7 +48,7 @@ def backward(mnist):
 
     saver = tf.train.Saver()
 
-    with tf.Session(config=config) as sess:
+    with tf.Session() as sess:
         init_op = tf.global_variables_initializer()
         sess.run(init_op)
 
