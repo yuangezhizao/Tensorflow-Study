@@ -6,7 +6,7 @@
     :Site: https://www.yuangezhizao.cn
     :Copyright: © 2019 yuangezhizao <root@yuangezhizao.cn>
 """
-# 导入模块，生成模拟数据集
+# 0导入模块，生成模拟数据集
 import tensorflow as tf
 import numpy as np
 
