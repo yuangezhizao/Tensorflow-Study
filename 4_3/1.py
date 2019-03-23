@@ -45,29 +45,10 @@ with tf.Session() as sess:
     print('current w1:', sess.run([w1, ema.average(w1)]))
 
     # 每次 sess.run 会更新一次 w1 的滑动平均值
-    sess.run(ema_op)
-    print('current global_step:', sess.run(global_step))
-    print('current w1:', sess.run([w1, ema.average(w1)]))
-
-    sess.run(ema_op)
-    print('current global_step:', sess.run(global_step))
-    print('current w1:', sess.run([w1, ema.average(w1)]))
-
-    sess.run(ema_op)
-    print('current global_step:', sess.run(global_step))
-    print('current w1:', sess.run([w1, ema.average(w1)]))
-
-    sess.run(ema_op)
-    print('current global_step:', sess.run(global_step))
-    print('current w1:', sess.run([w1, ema.average(w1)]))
-
-    sess.run(ema_op)
-    print('current global_step:', sess.run(global_step))
-    print('current w1:', sess.run([w1, ema.average(w1)]))
-
-    sess.run(ema_op)
-    print('current global_step:', sess.run(global_step))
-    print('current w1:', sess.run([w1, ema.average(w1)]))
+    for i in range(6):
+        sess.run(ema_op)
+        print('current global_step:', sess.run(global_step))
+        print('current w1:', sess.run([w1, ema.average(w1)]))
 
 # 更改 MOVING_AVERAGE_DECAY 为 0.1，看影子追随速度
 
